@@ -12,7 +12,7 @@ function AddCounterForm(props) {
     };
 
     return (
-        <div>
+        <div classNmae='col'>
             <input type="text" name='name' value={name} onChange={e => setName(e.target.value)}/>
             <input type="text" count='count' value={count} onChange={e => setCount(e.target.value)}/>
 

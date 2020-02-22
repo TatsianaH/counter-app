@@ -44,7 +44,7 @@ function App() {
     };
 
     return (
-        <div>
+        <div className='container'>
             <h1>Counters</h1>
             <hr/>
 
@@ -52,7 +52,7 @@ function App() {
             {
                 counters.reduce((acc, curr) => acc + curr.count, 0)
             }
-            <button onClick={resetTotalCount}>Reset Total Count</button>
+            <button onClick={resetTotalCount} className='btn btn-danger'>Reset Total Count</button>
             {counters.map(el => <Counter key={el.id}
                                          id={el.id}
                                          name={el.name}
