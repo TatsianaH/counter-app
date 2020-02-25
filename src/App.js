@@ -45,14 +45,26 @@ function App() {
 
     return (
         <div className='container'>
-            <h1>Counters</h1>
-            <hr/>
+            <div className="card">
+                <div className='card-header'>
+                    <h1>Counters</h1>
+                </div>
 
-            Total
-            {
-                counters.reduce((acc, curr) => acc + curr.count, 0)
-            }
-            <button onClick={resetTotalCount} className='btn btn-danger'>Reset Total Count</button>
+            </div>
+            <hr/>
+            <div className='card mb-2'>
+                <div className='card-body'>
+                    <div className='row'>
+                        <div className="col-4">
+                            Total
+                            {
+                                counters.reduce((acc, curr) => acc + curr.count, 0)
+                            }
+                            <button onClick={resetTotalCount} className='btn btn-danger'>Reset Total Count</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
             {counters.map(el => <Counter key={el.id}
                                          id={el.id}
                                          name={el.name}
@@ -61,8 +73,8 @@ function App() {
                                          decrement={decrementCounter}
                                          remove={removeCounter}/>)}
 
-                                         <hr/>
-                                         <AddCounterForm onSubmit={addCounter}/>
+            <hr/>
+            <AddCounterForm onSubmit={addCounter}/>
         </div>
     );
 }
