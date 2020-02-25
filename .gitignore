@@ -2,7 +2,7 @@
 
 /.idea
 .idea/workspace.xml
-
+/.idea/inpectionProfiles/
 # dependencies
 /node_modules
 /.pnp
