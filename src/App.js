@@ -15,7 +15,7 @@ function App() {
     const [counters, setCounters] = useState(initialCountersState);
 
     const resetTotalCount = () => {
-        const newCounts = counters.map(el => ({...el, count: 0}))
+        const newCounts = counters.map(el => ({...el, count: 0}));
         setCounters(newCounts);
     };
     const totalSum = (counters) => {
@@ -49,7 +49,7 @@ function App() {
 
     return (
         <div className='container'>
-            <div className="card mb-2">
+            <div className='card mb-2'>
                 <div className='card-header'>
                     <h1>Counters</h1>
                 </div>

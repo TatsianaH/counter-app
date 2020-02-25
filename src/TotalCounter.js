@@ -11,7 +11,7 @@ function TotalCounter(props) {
                             Total
                             {props.totalSum(props.counters)}
                         </strong>
-                        <button id="buttonTotal" onClick={props.resetTotalCount} className='btn btn-danger'>Reset Total Count</button>
+                        <button id='buttonTotal' onClick={props.resetTotalCount} className='btn btn-danger'>Reset Total Count</button>
                     </div>
                 </div>
             </div>

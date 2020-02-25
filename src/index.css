@@ -1,42 +1,43 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
 
 .container {
-background: darkslategrey;
+    background: darkslategrey;
 }
 
 #root {
-  background: black;
+    background: black;
 }
 
 #buttonTotal {
-margin-left: 10px;
+    margin-left: 10px;
 }
 
-#buttonIncr{
-  margin-left: 10px;
+#buttonIncr {
+    margin-left: 10px;
 }
 
-#buttonDecr{
-  margin-right: 10px;
+#buttonDecr {
+    margin-right: 10px;
 }
 
-.card-body{
-  background-color: darkgray;
+.card-body {
+    background-color: darkgray;
 }
- .card-header {
-   background-color: darkgray;
- }
+
+.card-header {
+    background-color: darkgray;
+}
 
