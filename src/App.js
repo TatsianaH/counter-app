@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import './App.css';
 import Counter from "./Counter";
 import AddCounterForm from "./AddCounterForm";
+import TotalCounter from "./TotalCounter";
 
 function App() {
 
@@ -16,6 +17,9 @@ function App() {
     const resetTotalCount = () => {
         const newCounts = counters.map(el => ({...el, count: 0}))
         setCounters(newCounts);
+    };
+    const totalSum = (counters) => {
+        return counters.reduce((acc, curr) => acc + curr.count, 0);
     };
 
     const incrementCounter = (id) => {
@@ -45,26 +49,14 @@ function App() {
 
     return (
         <div className='container'>
-            <div className="card">
+            <div className="card mb-2">
                 <div className='card-header'>
                     <h1>Counters</h1>
                 </div>
 
             </div>
             <hr/>
-            <div className='card mb-2'>
-                <div className='card-body'>
-                    <div className='row'>
-                        <div className="col-4">
-                            Total
-                            {
-                                counters.reduce((acc, curr) => acc + curr.count, 0)
-                            }
-                            <button onClick={resetTotalCount} className='btn btn-danger'>Reset Total Count</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+           <TotalCounter resetTotalCount={resetTotalCount} totalSum={totalSum} counters={counters}/>
             {counters.map(el => <Counter key={el.id}
                                          id={el.id}
                                          name={el.name}

@@ -2,12 +2,12 @@ import React, {useState} from 'react';
 import './App.css';
 
 function AddCounterForm(props) {
-    const [name, setName] = useState(' ');
+    const [name, setName] = useState('Enter Counter name');
     const [count, setCount] = useState(0);
 
     const onSubmit = () => {
         props.onSubmit(name, Number(count));
-        setName('');
+        setName('Enter Counter name');
         setCount(0);
     };
 

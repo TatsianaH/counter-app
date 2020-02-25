@@ -18,5 +18,25 @@ background: darkslategrey;
 }
 
 #root {
-  background: beige;
+  background: black;
 }
+
+#buttonTotal {
+margin-left: 10px;
+}
+
+#buttonIncr{
+  margin-left: 10px;
+}
+
+#buttonDecr{
+  margin-right: 10px;
+}
+
+.card-body{
+  background-color: darkgray;
+}
+ .card-header {
+   background-color: darkgray;
+ }
+
