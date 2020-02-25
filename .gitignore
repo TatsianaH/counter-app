@@ -1,13 +1,10 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
+.idea/
 /.idea
 
 /workspace.xml
-/modules.xml
-/vsc.xml
-/misc.xml
-/counter-app.iml
-/.idea/inspectionProfiles/Project_Default.xml
+
 # dependencies
 /node_modules
 /.pnp
