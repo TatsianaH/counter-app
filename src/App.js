@@ -3,6 +3,8 @@ import './App.css';
 import Counter from "./Counter";
 import AddCounterForm from "./AddCounterForm";
 import TotalCounter from "./TotalCounter";
+import ConfirmationDelete from "./ConfirmationDelete";
+
 
 function App() {
 
@@ -13,6 +15,8 @@ function App() {
     ];
 
     const [counters, setCounters] = useState(initialCountersState);
+    const [confirmCounter, setConfirmCounter] = useState({});
+
 
     const resetTotalCount = () => {
         const newCounts = counters.map(el => ({...el, count: 0}));
@@ -37,15 +41,25 @@ function App() {
         setCounters(newCounters);
     };
 
-    const removeCounter = (id) => {
-        const newCounters = counters.filter(el => el.id !== id);
+    const confirmRemoveCounter = counter => {
+        setConfirmCounter(counter);
+    };
+    const removeConfirmed = () => {
+        const newCounters = counters.filter(el => el.id !== confirmCounter.id);
         setCounters(newCounters);
+        setConfirmCounter({});
+    };
+
+    const confirmDeleteCancel = () => {
+        setConfirmCounter({});
     };
 
     const addCounter = (name, count) => {
         const newCounters = [...counters, {id: Math.random(), name, count: Number(count)}];
         setCounters(newCounters);
     };
+
+
 
     return (
         <div className='container'>
@@ -56,17 +70,25 @@ function App() {
 
             </div>
             <hr/>
-           <TotalCounter resetTotalCount={resetTotalCount} totalSum={totalSum} counters={counters}/>
-            {counters.map(el => <Counter key={el.id}
-                                         id={el.id}
-                                         name={el.name}
-                                         count={el.count}
-                                         increment={incrementCounter}
-                                         decrement={decrementCounter}
-                                         remove={removeCounter}/>)}
+            <TotalCounter resetTotalCount={resetTotalCount} totalSum={totalSum} counters={counters}/>
+            {
+                counters.map(el => <Counter key={el.id}
+                                            counter={el}
+                                            increment={incrementCounter}
+                                            decrement={decrementCounter}
+                                            remove={confirmRemoveCounter}
+                />)
+            }
 
             <hr/>
             <AddCounterForm onSubmit={addCounter}/>
+
+            <ConfirmationDelete
+            name={confirmCounter.name}
+            onSuccess={removeConfirmed}
+            onCancel={confirmDeleteCancel}
+            />
+
         </div>
     );
 }
